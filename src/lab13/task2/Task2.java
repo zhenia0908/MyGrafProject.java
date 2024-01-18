@@ -59,17 +59,18 @@ public class Task2 {
         int totalValue = 0;
         HashMap<String, Integer> word = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
-        String line = scanner.nextLine();
-        while (line != "end") {
+        String line ;
+        while (line  != "end") {
+            = scanner.nextLine();
           line =   line.toUpperCase();
             char[] symbols = line.toCharArray();
             int value = 0;
             for (int i = 0; i < symbols.length; i++) {
-               int  value1 = symbolCost.get(symbols[i]);
-                word.put(line, value);
+                 value += symbolCost.get(String.valueOf(symbols[i]));
             }
+            word.put(line, value);
             totalValue += value;
-            value = 0;
+            System.out.println(line+" "+ value);
         }
         System.out.println("Sum of balls " + totalValue);
     }
